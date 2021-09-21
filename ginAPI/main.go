@@ -14,8 +14,13 @@ func helloWorld(c *gin.Context) {
 	})
 }
 
-func main() {
+func setUpRouter() *gin.Engine {
 	router := gin.Default()
 	router.GET("hello", helloWorld)
+	return router
+}
+
+func main() {
+	router := setUpRouter()
 	router.Run(":80")
 }
