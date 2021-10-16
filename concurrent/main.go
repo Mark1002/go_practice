@@ -1,4 +1,4 @@
-package main
+package concurrent
 
 import (
 	"fmt"
@@ -28,7 +28,7 @@ func producer(langs []string) <-chan string {
 	return out
 }
 
-func main() {
+func Excute() {
 	langs := []string{"python", "java", "ruby", "go", "c++"}
 	in := producer(langs)
 	out1 := to_upper(in)

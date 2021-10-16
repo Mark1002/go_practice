@@ -1,13 +1,13 @@
-package main
+package hello
 
 import (
 	"fmt"
 	"log"
 
-	"example.com/greetings"
+	"github.com/mark1002/go_practice/greetings"
 )
 
-func main() {
+func Excute() {
 	// Get a greeting message and print it.
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
