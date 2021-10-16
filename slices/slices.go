@@ -1,4 +1,4 @@
-package main
+package slices
 
 import "golang.org/x/tour/pic"
 
@@ -15,6 +15,6 @@ func Pic(dx, dy int) [][]uint8 {
 	return result
 }
 
-func main() {
+func Excute() {
 	pic.Show(Pic)
 }

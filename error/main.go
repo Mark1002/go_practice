@@ -1,4 +1,4 @@
-package main
+package error
 
 import (
 	"fmt"
@@ -21,7 +21,7 @@ func Foo() {
 	panic("fatal error!")
 }
 
-func main() {
+func Excute() {
 	defer func() {
 		if p := recover(); p != nil {
 			fmt.Printf("internal error: %v", p)
