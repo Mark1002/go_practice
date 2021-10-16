@@ -32,5 +32,5 @@ func main() {
 		fmt.Println(err)
 	}
 	Foo()
-	defer fmt.Println("final")
+	fmt.Println("program execute final")
 }
