@@ -1,14 +1,22 @@
-# go pratice
-1. create go module
+# go practice
+1. create go demo code package
 ```
-$ mkdir <module>
-$ cd <module>
+$ mkdir <package>
+$ cd <package>
 ```
-2. init go module
+2. import go package at outter main.go file
+```go
+package main
+
+import (
+	"github.com/mark1002/go_practice/<package>"
+)
+
+func main() {
+	<package>.Excute()
+}
 ```
-<module> $ go mod init go_pratice/<module>
+3. run all practice
 ```
-3. run go
-```
-<module> $ go run .
+<module> $ go run main.go
 ```
