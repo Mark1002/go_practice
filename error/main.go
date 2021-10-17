@@ -21,7 +21,7 @@ func Foo() {
 	panic("fatal error!")
 }
 
-func Excute() {
+func Execute() {
 	defer func() {
 		if p := recover(); p != nil {
 			fmt.Printf("internal error: %v", p)

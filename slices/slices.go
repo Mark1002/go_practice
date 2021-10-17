@@ -15,6 +15,6 @@ func Pic(dx, dy int) [][]uint8 {
 	return result
 }
 
-func Excute() {
+func Execute() {
 	pic.Show(Pic)
 }

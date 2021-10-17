@@ -9,9 +9,9 @@ import (
 )
 
 func main() {
-	error.Excute()
-	concurrent.Excute()
-	slices.Excute()
-	hello.Excute()
+	error.Execute()
+	concurrent.Execute()
+	slices.Execute()
+	hello.Execute()
 	fibclosure.Execute()
 }

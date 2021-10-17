@@ -28,7 +28,7 @@ func producer(langs []string) <-chan string {
 	return out
 }
 
-func Excute() {
+func Execute() {
 	langs := []string{"python", "java", "ruby", "go", "c++"}
 	in := producer(langs)
 	out1 := to_upper(in)

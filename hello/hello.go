@@ -7,7 +7,7 @@ import (
 	"github.com/mark1002/go_practice/greetings"
 )
 
-func Excute() {
+func Execute() {
 	// Get a greeting message and print it.
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
