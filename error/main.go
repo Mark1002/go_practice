@@ -21,10 +21,10 @@ func Foo() {
 	panic("fatal error!")
 }
 
-func Execute() {
+func ExecutePanic() {
 	defer func() {
 		if p := recover(); p != nil {
-			fmt.Printf("internal error: %v", p)
+			fmt.Printf("internal error: %v\n", p)
 		}
 	}()
 	err := throwError()
@@ -32,5 +32,5 @@ func Execute() {
 		fmt.Println(err)
 	}
 	Foo()
-	fmt.Println("program execute final")
+	fmt.Println("i don't execute in here!")
 }

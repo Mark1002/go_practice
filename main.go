@@ -10,7 +10,8 @@ import (
 )
 
 func main() {
-	error.Execute()
+	error.ExecutePanic()
+	error.ExecuteCustomError()
 	concurrent.Execute()
 	slices.Execute()
 	hello.Execute()
