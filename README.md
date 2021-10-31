@@ -1,4 +1,6 @@
 # go practice
+This is my golang practice project.
+
 1. create go demo code package
 ```
 $ mkdir <package>
@@ -20,3 +22,7 @@ func main() {
 ```
 <module> $ go run main.go
 ```
+
+reference
+
+1. https://tour.golang.org

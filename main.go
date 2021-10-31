@@ -13,6 +13,7 @@ func main() {
 	error.ExecutePanic()
 	error.ExecuteCustomError()
 	concurrent.Execute()
+	concurrent.ExecuteCrawler()
 	slices.Execute()
 	hello.Execute()
 	fibclosure.Execute()
