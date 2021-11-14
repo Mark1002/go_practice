@@ -4,17 +4,31 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"sync"
 
 	"github.com/PuerkitoBio/goquery"
 )
 
 func ExecuteHttp() {
-	result := crawl("hello-world")
-	fmt.Println(result)
+	targets := crawlLinks()
+	fmt.Println("target count:", len(targets))
+	results := make([]string, 0)
+	messages := make(chan string)
+	var wg sync.WaitGroup
+	for _, target := range targets {
+		wg.Add(1)
+		go crawlTitle(target, messages)
+		go func() {
+			defer wg.Done()
+			results = append(results, <-messages)
+		}()
+	}
+	wg.Wait()
+	fmt.Println("results count:", len(results))
 }
 
-func crawl(path string) string {
-	resp, err := http.Get("https://gobyexample.com/" + path)
+func crawlByGOQuey(url string) *goquery.Document {
+	resp, err := http.Get(url)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -27,6 +41,25 @@ func crawl(path string) string {
 	if err != nil {
 		log.Fatal(err)
 	}
+	return doc
+}
+
+func crawlTitle(path string, messages chan<- string) {
+	url := "https://gobyexample.com/"
+	doc := crawlByGOQuey(url + path)
 	title := doc.Find("h2").Text()
-	return title
+	messages <- title
+}
+
+func crawlLinks() []string {
+	url := "https://gobyexample.com/"
+	links := make([]string, 0)
+	doc := crawlByGOQuey(url)
+	doc.Find("li > a").Each(func(i int, s *goquery.Selection) {
+		link, exists := s.Attr("href")
+		if exists {
+			links = append(links, link)
+		}
+	})
+	return links
 }
