@@ -14,6 +14,7 @@ func main() {
 	error.ExecuteCustomError()
 	concurrent.Execute()
 	concurrent.ExecuteCrawler()
+	concurrent.ExecuteHttp()
 	slices.Execute()
 	hello.Execute()
 	fibclosure.Execute()
