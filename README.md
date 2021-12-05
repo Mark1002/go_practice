@@ -1,26 +1,13 @@
 # go practice
 This is my golang practice project.
 
-1. create go demo code package
+1. pull all package
 ```
-$ mkdir <package>
-$ cd <package>
+$ go get
 ```
-2. import go package at outter main.go file
-```go
-package main
-
-import (
-	"github.com/mark1002/go_practice/<package>"
-)
-
-func main() {
-	<package>.Excute()
-}
+2. run go practice program
 ```
-3. run all practice
-```
-<module> $ go run main.go
+$ go run main.go <practice program>
 ```
 
 reference
