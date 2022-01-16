@@ -6,6 +6,7 @@ import (
 
 	"github.com/mark1002/go_practice/cmd"
 	"github.com/mark1002/go_practice/concurrent"
+	"github.com/mark1002/go_practice/context"
 	"github.com/mark1002/go_practice/error"
 	"github.com/mark1002/go_practice/fibclosure"
 	"github.com/mark1002/go_practice/hello"
@@ -41,6 +42,8 @@ func main() {
 		maps.Execute()
 	case "cmdDemo":
 		cmd.Execute()
+	case "contextDemo":
+		context.Execute()
 	default:
 		fmt.Printf("not found program \"%v\"\n", args[1])
 	}
