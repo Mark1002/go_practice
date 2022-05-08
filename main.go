@@ -44,6 +44,8 @@ func main() {
 		cmd.Execute()
 	case "contextDemo":
 		context.Execute()
+	case "contextCancelDemo":
+		context.ExecuteCancel()
 	default:
 		fmt.Printf("not found program \"%v\"\n", args[1])
 	}
