@@ -10,6 +10,7 @@ import (
 	"github.com/mark1002/go_practice/error"
 	"github.com/mark1002/go_practice/fibclosure"
 	"github.com/mark1002/go_practice/hello"
+	"github.com/mark1002/go_practice/interfaces"
 	"github.com/mark1002/go_practice/maps"
 	"github.com/mark1002/go_practice/slices"
 )
@@ -46,6 +47,8 @@ func main() {
 		context.Execute()
 	case "contextCancelDemo":
 		context.ExecuteCancel()
+	case "interfaceDemo":
+		interfaces.Execute()
 	default:
 		fmt.Printf("not found program \"%v\"\n", args[1])
 	}
