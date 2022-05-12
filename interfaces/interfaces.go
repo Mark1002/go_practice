@@ -8,6 +8,10 @@ type Human interface {
 	String() string
 }
 
+type secreter interface {
+	secret()
+}
+
 type Person struct {
 	Name string
 	Age  int
@@ -29,15 +33,25 @@ func (p Person) talk() {
 	fmt.Println("i can talk")
 }
 
-func IntroducteYourSelf(h Human) {
+func introducteYourSelf(h Human) {
 	h.walk()
 	h.talk()
 	fmt.Println(h)
 }
 
+func onlyWalk(walker interface{ walk() }) {
+	walker.walk()
+}
+
+func talkSecret(s secreter) {
+	s.secret()
+}
+
 func Execute() {
 	a := Person{"Arthur Dent", 42}
 	z := Person{"Zaphod Beeblebrox", 9001}
-	IntroducteYourSelf(a)
-	IntroducteYourSelf(z)
+	introducteYourSelf(a)
+	introducteYourSelf(z)
+	onlyWalk(a)
+	talkSecret(z)
 }
