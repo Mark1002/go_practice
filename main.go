@@ -33,6 +33,8 @@ func main() {
 		concurrent.ExecuteCrawler()
 	case "crawlerHttpDemo":
 		concurrent.ExecuteHttp()
+	case "urlpoll":
+		concurrent.ExecuteUrlPoll()
 	case "slicesDemo":
 		slices.Execute()
 	case "helloDemo":
