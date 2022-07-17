@@ -27,42 +27,34 @@ func main() {
 	switch args[1] {
 	case "panicDemo":
 		demo = error.PanicErrorDemo{}
-		demo.Execute()
 	case "CustomErrorDemo":
 		demo = error.CustomErrorDemo{}
-		demo.Execute()
 	case "concurDemo":
 		demo = concurrent.ConCurUpperDemo{}
-		demo.Execute()
 	case "crawlerDemo":
 		demo = concurrent.FakeCrawlerDemo{}
-		demo.Execute()
 	case "crawlerHttpDemo":
 		demo = concurrent.HttpCrawlerDemo{}
-		demo.Execute()
 	case "urlpoll":
 		demo = concurrent.UrlPollDemo{}
-		demo.Execute()
 	case "slicesDemo":
 		demo = slices.SliceDemo{}
-		demo.Execute()
 	case "helloDemo":
-		hello.Execute()
+		demo = hello.HelloDemo{}
 	case "closureDemo":
-		fibclosure.Execute()
+		demo = fibclosure.FibClosureDemo{}
 	case "mapDemo":
-		maps.Execute()
+		demo = maps.MapDemo{}
 	case "cmdDemo":
-		cmd.Execute()
+		demo = cmd.CmdDemo{}
 	case "contextDemo":
 		demo = context.ContextDemo{}
-		demo.Execute()
 	case "contextCancelDemo":
 		demo = context.ContextCancelDemo{}
-		demo.Execute()
 	case "interfaceDemo":
-		interfaces.Execute()
+		demo = interfaces.InterfaceDemo{}
 	default:
-		fmt.Printf("not found program \"%v\"\n", args[1])
+		demo = base.NotFound{DemoName: args[1]}
 	}
+	demo.Execute()
 }

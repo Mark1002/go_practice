@@ -18,7 +18,9 @@ func fibonacci() func() int {
 	}
 }
 
-func Execute() {
+type FibClosureDemo struct{}
+
+func (demo FibClosureDemo) Execute() {
 	f := fibonacci()
 	for i := 0; i < 10; i++ {
 		fmt.Println(f())

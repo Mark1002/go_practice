@@ -2,7 +2,9 @@ package maps
 
 import "fmt"
 
-func Execute() {
+type MapDemo struct{}
+
+func (demo MapDemo) Execute() {
 	userIDMap := map[string]int{
 		"Peter": 1234,
 		"Tony":  4321,

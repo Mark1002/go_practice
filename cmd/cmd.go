@@ -32,7 +32,9 @@ func execInput(input string) error {
 	return cmd.Run()
 }
 
-func Execute() {
+type CmdDemo struct{}
+
+func (demo CmdDemo) Execute() {
 	reader := bufio.NewReader(os.Stdin)
 
 	for {

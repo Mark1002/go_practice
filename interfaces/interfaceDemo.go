@@ -37,7 +37,9 @@ func talkSecret(s secreter) {
 	s.secret()
 }
 
-func Execute() {
+type InterfaceDemo struct{}
+
+func (demo InterfaceDemo) Execute() {
 	a := Person{"Arthur Dent", 42}
 	z := Person{"Zaphod Beeblebrox", 9001}
 	introducteYourSelf(a)
