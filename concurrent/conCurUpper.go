@@ -5,7 +5,9 @@ import (
 	"strings"
 )
 
-func to_upper(in <-chan string) <-chan string {
+type ConCurUpperDemo struct{}
+
+func (demo ConCurUpperDemo) to_upper(in <-chan string) <-chan string {
 	out := make(chan string)
 	go func() {
 		for lang := range in {
@@ -17,7 +19,7 @@ func to_upper(in <-chan string) <-chan string {
 	return out
 }
 
-func producer(langs []string) <-chan string {
+func (demo ConCurUpperDemo) producer(langs []string) <-chan string {
 	out := make(chan string)
 	go func() {
 		for _, lang := range langs {
@@ -28,11 +30,11 @@ func producer(langs []string) <-chan string {
 	return out
 }
 
-func Execute() {
+func (demo ConCurUpperDemo) Execute() {
 	langs := []string{"python", "java", "ruby", "go", "c++"}
-	in := producer(langs)
-	out1 := to_upper(in)
-	out2 := to_upper(in)
+	in := demo.producer(langs)
+	out1 := demo.to_upper(in)
+	out2 := demo.to_upper(in)
 	for lang := range out2 {
 		fmt.Println("out2: " + lang)
 	}

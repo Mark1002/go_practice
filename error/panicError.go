@@ -21,7 +21,9 @@ func Foo() {
 	panic("fatal error!")
 }
 
-func ExecutePanic() {
+type PanicErrorDemo struct{}
+
+func (demo PanicErrorDemo) Execute() {
 	defer func() {
 		if p := recover(); p != nil {
 			fmt.Printf("internal error: %v\n", p)

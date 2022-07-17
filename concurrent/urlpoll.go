@@ -87,7 +87,9 @@ func Poller(in <-chan *Resource, out chan<- *Resource, status chan<- State) {
 	}
 }
 
-func ExecuteUrlPoll() {
+type UrlPollDemo struct{}
+
+func (demo UrlPollDemo) Execute() {
 	// Create our input and output channels.
 	pending, complete := make(chan *Resource), make(chan *Resource)
 

@@ -57,7 +57,9 @@ func doSomethingCancelDeadline(ctx context.Context) {
 	fmt.Printf("doSomething: finished\n")
 }
 
-func ExecuteCancel() {
+type ContextCancelDemo struct{}
+
+func (demo ContextCancelDemo) Execute() {
 	ctx := context.Background()
 	doSomething(ctx)
 	doSomethingCancelDeadline(ctx)

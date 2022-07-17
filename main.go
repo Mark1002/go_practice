@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/mark1002/go_practice/base"
 	"github.com/mark1002/go_practice/cmd"
 	"github.com/mark1002/go_practice/concurrent"
 	"github.com/mark1002/go_practice/context"
@@ -17,6 +18,7 @@ import (
 
 func main() {
 	args := os.Args
+	var demo base.GoPractice
 
 	if len(args) == 1 {
 		fmt.Println("please enter demo program name!")
@@ -24,19 +26,26 @@ func main() {
 	}
 	switch args[1] {
 	case "panicDemo":
-		error.ExecutePanic()
+		demo = error.PanicErrorDemo{}
+		demo.Execute()
 	case "CustomErrorDemo":
-		error.ExecuteCustomError()
+		demo = error.CustomErrorDemo{}
+		demo.Execute()
 	case "concurDemo":
-		concurrent.Execute()
+		demo = concurrent.ConCurUpperDemo{}
+		demo.Execute()
 	case "crawlerDemo":
-		concurrent.ExecuteCrawler()
+		demo = concurrent.FakeCrawlerDemo{}
+		demo.Execute()
 	case "crawlerHttpDemo":
-		concurrent.ExecuteHttp()
+		demo = concurrent.HttpCrawlerDemo{}
+		demo.Execute()
 	case "urlpoll":
-		concurrent.ExecuteUrlPoll()
+		demo = concurrent.UrlPollDemo{}
+		demo.Execute()
 	case "slicesDemo":
-		slices.Execute()
+		demo = slices.SliceDemo{}
+		demo.Execute()
 	case "helloDemo":
 		hello.Execute()
 	case "closureDemo":
@@ -46,9 +55,11 @@ func main() {
 	case "cmdDemo":
 		cmd.Execute()
 	case "contextDemo":
-		context.Execute()
+		demo = context.ContextDemo{}
+		demo.Execute()
 	case "contextCancelDemo":
-		context.ExecuteCancel()
+		demo = context.ContextCancelDemo{}
+		demo.Execute()
 	case "interfaceDemo":
 		interfaces.Execute()
 	default:

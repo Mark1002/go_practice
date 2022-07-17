@@ -23,7 +23,9 @@ func Sqrt(x float64) (float64, error) {
 	return z, nil
 }
 
-func ExecuteCustomError() {
+type CustomErrorDemo struct{}
+
+func (demo CustomErrorDemo) Execute() {
 	fmt.Println(Sqrt(2))
 	fmt.Println(Sqrt(-2))
 }

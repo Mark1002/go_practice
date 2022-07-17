@@ -42,7 +42,9 @@ func Crawl(sm *sync.Map, wg *sync.WaitGroup, url string, depth int, fetcher Fetc
 	defer wg.Done()
 }
 
-func ExecuteCrawler() {
+type FakeCrawlerDemo struct{}
+
+func (demo FakeCrawlerDemo) Execute() {
 	var wg sync.WaitGroup
 	var sm sync.Map
 	wg.Add(1)

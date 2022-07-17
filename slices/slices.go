@@ -2,7 +2,9 @@ package slices
 
 import "golang.org/x/tour/pic"
 
-func Pic(dx, dy int) [][]uint8 {
+type SliceDemo struct{}
+
+func (s SliceDemo) Pic(dx, dy int) [][]uint8 {
 	result := make([][]uint8, dy)
 	for i := range result {
 		result[i] = make([]uint8, dx)
@@ -15,6 +17,6 @@ func Pic(dx, dy int) [][]uint8 {
 	return result
 }
 
-func Execute() {
-	pic.Show(Pic)
+func (s SliceDemo) Execute() {
+	pic.Show(s.Pic)
 }

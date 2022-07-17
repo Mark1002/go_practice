@@ -9,7 +9,9 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
-func ExecuteHttp() {
+type HttpCrawlerDemo struct{}
+
+func (dmo HttpCrawlerDemo) Execute() {
 	targets := crawlLinks()
 	fmt.Println("target count:", len(targets))
 	results := make([]string, 0)

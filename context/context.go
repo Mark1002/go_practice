@@ -5,7 +5,9 @@ import (
 	"fmt"
 )
 
-func Execute() {
+type ContextDemo struct{}
+
+func (demo ContextDemo) Execute() {
 	ctx := context.Background()
 	ctx = addValue(ctx)
 	readValue(ctx)
