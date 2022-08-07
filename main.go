@@ -10,6 +10,7 @@ import (
 	"github.com/mark1002/go_practice/context"
 	"github.com/mark1002/go_practice/error"
 	"github.com/mark1002/go_practice/fibclosure"
+	"github.com/mark1002/go_practice/generics"
 	"github.com/mark1002/go_practice/hello"
 	"github.com/mark1002/go_practice/interfaces"
 	"github.com/mark1002/go_practice/maps"
@@ -53,6 +54,8 @@ func main() {
 		demo = context.ContextCancelDemo{}
 	case "interfaceDemo":
 		demo = interfaces.InterfaceDemo{}
+	case "genericDemo":
+		demo = generics.GenericDemo{}
 	default:
 		demo = base.NotFound{DemoName: args[1]}
 	}
