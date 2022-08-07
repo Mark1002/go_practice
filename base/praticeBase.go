@@ -2,7 +2,7 @@ package base
 
 import "fmt"
 
-type GoPractice interface {
+type GoPracticer interface {
 	Execute()
 }
 

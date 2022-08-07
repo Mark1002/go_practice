@@ -19,7 +19,7 @@ import (
 
 func main() {
 	args := os.Args
-	var demo base.GoPractice
+	var demo base.GoPracticer
 
 	if len(args) == 1 {
 		fmt.Println("please enter demo program name!")
