@@ -7,6 +7,7 @@ import (
 	"github.com/mark1002/go_practice/base"
 	"github.com/mark1002/go_practice/cmd"
 	"github.com/mark1002/go_practice/concurrent"
+	"github.com/mark1002/go_practice/constant"
 	"github.com/mark1002/go_practice/context"
 	"github.com/mark1002/go_practice/error"
 	"github.com/mark1002/go_practice/fibclosure"
@@ -56,6 +57,8 @@ func main() {
 		demo = interfaces.InterfaceDemo{}
 	case "genericDemo":
 		demo = generics.GenericDemo{}
+	case "iotaDemo":
+		demo = constant.IotaDemo{}
 	default:
 		demo = base.NotFound{DemoName: args[1]}
 	}
