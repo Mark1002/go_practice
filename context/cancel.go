@@ -43,17 +43,16 @@ func doSomethingCancelDeadline(ctx context.Context) {
 
 	printCh := make(chan int)
 	go doAnother(ctx, printCh)
-
+outerLoop:
 	for num := 1; num <= 3; num++ {
 		select {
 		case printCh <- num:
 			time.Sleep(1 * time.Second)
 		case <-ctx.Done():
-			break
+			fmt.Println("doSomething:", ctx.Err())
+			break outerLoop
 		}
 	}
-	cancelCtx()
-	time.Sleep(100 * time.Millisecond)
 	fmt.Printf("doSomething: finished\n")
 }
 

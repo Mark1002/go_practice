@@ -59,6 +59,8 @@ func main() {
 		demo = generics.GenericDemo{}
 	case "iotaDemo":
 		demo = constant.IotaDemo{}
+	case "ChannelPracticeDemo":
+		demo = concurrent.ChannelPracticeDemo{}
 	default:
 		demo = base.NotFound{DemoName: args[1]}
 	}
